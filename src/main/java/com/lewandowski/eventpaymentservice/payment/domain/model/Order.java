@@ -22,4 +22,8 @@ public class Order {
     BigDecimal amount;
     Status status;
     List<String> productIds;
+
+    public void validateOrderForPayment() {
+        // Mocked validation of order for payment
+    }
 }

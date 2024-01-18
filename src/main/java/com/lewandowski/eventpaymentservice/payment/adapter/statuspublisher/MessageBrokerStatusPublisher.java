@@ -16,6 +16,6 @@ class MessageBrokerStatusPublisher implements StatusPublisher {
 
     @Override
     public void send(Order order) {
-        kafkaTemplate.send("order-status-local2", order);
+        kafkaTemplate.send("order-status-changed", order);
     }
 }

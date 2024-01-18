@@ -15,9 +15,9 @@ class MessageBrokerOrderConsumer {
 
     private final PaymentService paymentService;
 
-    @KafkaListener(topics = "order-payment-local2", groupId = "payment-service")
+    @KafkaListener(topics = "order-received-topic", groupId = "payment-service")
     public void consume(@Payload Order order) {
-        log.info("Order event received: {}", order);
+        log.info("Order event with id: [{}] received for payment processing", order.getId());
         paymentService.makePayment(order);
     }
 }
